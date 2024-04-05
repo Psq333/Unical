@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.demacs.Proxy.HomeController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <ImageView fx:id="img_viewer" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </ImageView>
+         </center>
+         <right>
+            <Button fx:id="piu_button" mnemonicParsing="false" onAction="#piu_clicked" text="&gt;" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </BorderPane.margin>
+            </Button>
+         </right>
+         <left>
+            <Button fx:id="meno_button" mnemonicParsing="false" onAction="#meno_clicked" text="&lt;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+               </padding>
+            </Button>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>
