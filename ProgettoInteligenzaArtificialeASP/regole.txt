@@ -1,0 +1,20 @@
+#show scelta/3.
+scelta(R,C,V) | nonscelta(R,C,V):- c(R,C,0), b(V).
+
+:-#count{R,C:scelta(R,C,_)} != 1.
+:-scelta(R,C,_),c(R,C,V), V != 0.
+
+:-scelta(R,C,V), c(R+1,C,0), R < 5.
+cellaInTesta(R,C,V):- c(R,C,V), c(R-1,C,0), V != 0.
+giustaPosizione(V):- scelta(_,C,V), cellaInTesta(_,C,V).
+
+:~scelta(R,C,_), m(M). [M-R@1, R, C, M]
+
+:~ scelta(R,C1,V), c(R,C2,V), &abs(C1-C2; K). [K@2, K]
+
+:~ scelta(_,C1,V), cellaInTesta(_,C2,V), &abs(C1-C2; K), not giustaPosizione(V). [K@3, K]
+
+:~scelta(R,C,V1), cellaInTesta(_,C,V2), &abs(V1-V2; K), R > 1. [K@4, K]
+:~scelta(_,C,V1), cellaInTesta(_,C,V2), &abs(V1-V2; K), V1 > V2. [K@5, K]
+
+:~scelta(0,C,V1), R = 1, c(R,C,V2), V1 != V2. [R@6,R]
